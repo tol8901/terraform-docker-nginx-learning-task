@@ -9,7 +9,6 @@ This repository represents the results of a learning task. Where used: Terraform
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Description
 
@@ -88,7 +87,3 @@ This project is intended to show the skills and knowledge in Terraform, Docker, 
 4. Commit your changes (`git commit -m 'Add some feature'`)
 5. Push to the branch (`git push origin feature-branch`)
 6. Open a pull request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
