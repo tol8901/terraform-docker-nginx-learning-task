@@ -1,7 +1,19 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# This pipeline automates the deployment process using Terraform and AWS.
+# It includes the following steps:
+# 1. Login to AWS using credentials stored in Azure DevOps pipeline variables.
+# 2. Initialize Terraform in the working directory.
+# 3. Generate a Terraform plan to show the actions Terraform will take.
+#
+# Trigger:
+# - The pipeline is triggered by changes to the 'main' branch.
+#
+# Pool:
+# - The pipeline runs on the latest Ubuntu virtual machine image.
+#
+# Steps:
+# - Login to AWS: Configures the AWS CLI with credentials from pipeline variables.
+# - Terraform Init: Initializes Terraform, downloading necessary provider plugins.
+# - Terraform Plan: Generates an execution plan for the Terraform configuration.
 
 trigger:
 - main
@@ -10,10 +22,19 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: |
+    echo "Logging into AWS..."
+    aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
+    aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
+    aws configure set default.region $(AWS_REGION)
+  displayName: 'Login to AWS'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    echo "Initializing Terraform..."
+    terraform init
+  displayName: 'Terraform Init'
+
+- script: |
+    echo "Planning Terraform..."
+    terraform plan
+  displayName: 'Terraform Plan'
