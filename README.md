@@ -87,3 +87,13 @@ This project is intended to show the skills and knowledge in Terraform, Docker, 
 4. Commit your changes (`git commit -m 'Add some feature'`)
 5. Push to the branch (`git push origin feature-branch`)
 6. Open a pull request
+
+## Task
+
+1. Add code for VPC (2 subnets: public, private) (IGW, NAT, routetables)
+2. Push it to the repository on the GitHub.
+3. Create Azure pipeline yaml file in the repository.
+4. In the file should be:
+	1) login to aws from ADO (put creds into the ADO pipeline variable)
+	2) terraform init
+	3) terraform plan
