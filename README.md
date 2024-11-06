@@ -9,7 +9,6 @@ This repository represents the results of a learning task. Where used: Terraform
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Description
 
@@ -89,6 +88,12 @@ This project is intended to show the skills and knowledge in Terraform, Docker, 
 5. Push to the branch (`git push origin feature-branch`)
 6. Open a pull request
 
-## License
+## Task
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+1. Add code for VPC (2 subnets: public, private) (IGW, NAT, routetables)
+2. Push it to the repository on the GitHub.
+3. Create Azure pipeline yaml file in the repository.
+4. In the file should be:
+	1) login to aws from ADO (put creds into the ADO pipeline variable)
+	2) terraform init
+	3) terraform plan
