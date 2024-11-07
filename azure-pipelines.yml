@@ -18,15 +18,14 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+pool: Default
 
 steps:
 - script: |
     echo "Logging into AWS..."
     aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
     aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
-    aws configure set default.region $(AWS_REGION)
+    aws configure set default.region us-east-1
   displayName: 'Login to AWS'
 
 - script: |
@@ -36,5 +35,10 @@ steps:
 
 - script: |
     echo "Planning Terraform..."
-    terraform plan
+    terraform plan -out=tfplan # Save the plan to a file 
   displayName: 'Terraform Plan'
+  
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Pipeline Artifact'
+  inputs:
+    artifact: 'Terraform_space'
