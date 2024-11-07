@@ -35,7 +35,7 @@ steps:
 
 - script: |
     echo "Planning Terraform..."
-    terraform plan -out=tfplan # Save the plan to a file 
+    terraform plan -out="out.tfplan" # Save the plan to a file 
   displayName: 'Terraform Plan'
   
 - task: PublishPipelineArtifact@1
