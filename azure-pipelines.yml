@@ -36,6 +36,7 @@ steps:
 - script: |
     echo "Planning Terraform..."
     terraform plan -out="out.tfplan"
+    pwd
   displayName: 'Terraform Plan'
   
 - task: PublishPipelineArtifact@1
