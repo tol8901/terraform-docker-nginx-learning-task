@@ -18,7 +18,7 @@
 trigger:
 - main
 
-pool: Default
+pool: wsl-pool
 
 steps:
 - script: |
