@@ -34,19 +34,17 @@ steps:
   displayName: 'Login to AWS'
 
 - script: |
-
     cd $(System.DefaultWorkingDirectory)/_terraform-task/Terraform_space/ 
-    
+
     # Remove the existing lock file 
     rm -f .terraform.lock.hcl
 
     echo "Initializing Terraform..."
-    terraform init
+    terraform init -upgrade
   displayName: 'Terraform Init'
 
 - script: |
     echo "Planning Terraform..."
-    pwd
     terraform plan -out="out.tfplan"
   displayName: 'Terraform Plan'
   
