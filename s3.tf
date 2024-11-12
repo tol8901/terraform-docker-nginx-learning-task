@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "terraform-up-and-running-state-qpworeitu23409587"
+  bucket = var.bucket
  
   # Prevent accidental deletion of this S3 bucket
   lifecycle {
