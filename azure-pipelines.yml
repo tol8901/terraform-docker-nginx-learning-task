@@ -52,4 +52,4 @@ steps:
   displayName: 'Publish Pipeline Artifact'
   inputs:
     artifact: 'Terraform_space'
-    path: '$(System.DefaultWorkingDirectory)/_terraform-task/Terraform_space/'
+    path: './'
