@@ -52,4 +52,4 @@ steps:
   displayName: 'Publish Pipeline Artifact'
   inputs:
     artifact: 'Terraform_space'
-    path: './'
+    path: 'out.tfplan'
