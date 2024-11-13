@@ -97,3 +97,14 @@ This project is intended to show the skills and knowledge in Terraform, Docker, 
 	1) login to aws from ADO (put creds into the ADO pipeline variable)
 	2) terraform init
 	3) terraform plan
+
+### Configure AWS CLI
+
+1. Creating the S3 bucket manually (with the active versioning feature).
+2. Perform the commands below
+```sh
+terraform init -reconfigure
+terraform plan -lock=false
+terraform import aws_s3_bucket.terraform_state terraform-up-and-running-state-qpworeitu23409588
+terraform apply -lock=false
+```

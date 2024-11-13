@@ -7,7 +7,7 @@ variable "region" {
 variable "bucket" {
   description = "The S3 bucket to store Terraform state"
   type        = string
-  default    = "terraform-up-and-running-state-qpworeitu23409587"
+  default    = "terraform-up-and-running-state-qpworeitu23409588"
 }
 
 variable "dynamodb_table" {
