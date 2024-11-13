@@ -40,12 +40,13 @@ steps:
     rm -f .terraform.lock.hcl
 
     echo "Initializing Terraform..."
-    terraform init -upgrade
+    terraform init -reconfigure
   displayName: 'Terraform Init'
 
 - script: |
     echo "Planning Terraform..."
-    terraform plan -out="out.tfplan"
+    terraform plan -lock=false -out="out.tfplan"
+    terraform import aws_s3_bucket.terraform_state terraform-up-and-running-state-qpworeitu23409588
   displayName: 'Terraform Plan'
   
 - task: PublishPipelineArtifact@1
