@@ -40,7 +40,7 @@ steps:
     # rm -f .terraform.lock.hcl
 
     echo "Initializing Terraform..."
-    terraform init -reconfigure
+    terraform init -reconfigure -upgrade
   displayName: 'Terraform Init'
 
 - script: |
