@@ -37,7 +37,7 @@ steps:
     cd $(System.DefaultWorkingDirectory)/_terraform-task/Terraform_space/ 
 
     # Remove the existing lock file 
-    # rm -f .terraform.lock.hcl
+    rm -f .terraform.lock.hcl
 
     echo "Initializing Terraform..."
     terraform init 
