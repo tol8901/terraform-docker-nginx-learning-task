@@ -13,7 +13,7 @@ terraform {
     region         = "us-east-1"
 
     # This block configures the DynamoDB table for state locking
-    dynamodb_table = "terraform-up-and-running-locks"
-    encrypt        = true
+    # dynamodb_table = "terraform-up-and-running-locks"
+    # encrypt        = true
   }
 }
