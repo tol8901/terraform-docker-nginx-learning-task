@@ -1,11 +1,11 @@
-# resource "aws_s3_bucket" "terraform_state" {
-#   bucket = var.bucket
+resource "aws_s3_bucket" "terraform_state" {
+  bucket = var.bucket
  
-#   # Prevent accidental deletion of this S3 bucket
-#   # lifecycle {
-#   #   prevent_destroy = true
-#   # }
-# }
+  # Prevent accidental deletion of this S3 bucket
+  # lifecycle {
+  #   prevent_destroy = true
+  # }
+}
 
 # resource "aws_s3_bucket_versioning" "enabled" {
 #   bucket = aws_s3_bucket.terraform_state.id
