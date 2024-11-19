@@ -10,8 +10,8 @@ variable "bucket" {
   default    = "terraform-up-and-running-state-qpworeitu23409588"
 }
 
-variable "dynamodb_table" {
-  description = "The DynamoDB table to use for state locking"
-  type        = string
-  default     = "terraform-up-and-running-locks"
-}
+# variable "dynamodb_table" {
+#   description = "The DynamoDB table to use for state locking"
+#   type        = string
+#   default     = "terraform-up-and-running-locks"
+# }
