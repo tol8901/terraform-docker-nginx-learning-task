@@ -1,9 +1,9 @@
-# resource "aws_instance" "example" {
-#   ami           = "ami-006dcf34c09e50022" // Amazon Linux 2 AMI
-#   instance_type = "t2.micro"
-#   vpc_security_group_ids = [
-#     aws_security_group.example.id,
-#   ]
+resource "aws_instance" "example" {
+  ami           = "ami-006dcf34c09e50022" // Amazon Linux 2 AMI
+  instance_type = "t2.micro"
+  vpc_security_group_ids = [
+    aws_security_group.example.id,
+  ]
 #   user_data = <<-EOF
 #               #!/bin/bash
 #               yum install -y docker
@@ -13,4 +13,4 @@
 #               docker image pull justwatchcomearring331/nginx-14:1.0
 #               docker run -d -p 8081:80 -e EXTERNAL_PORT=8081 justwatchcomearring331/nginx-14:1.0
 #               EOF
-# }
+}
