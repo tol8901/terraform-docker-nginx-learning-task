@@ -46,7 +46,7 @@ steps:
 
 - script: |
     echo "Planning Terraform..."
-    # terraform import aws_s3_bucket.terraform_state terraform-up-and-running-state-qpworeitu23409588
+    # terraform import aws_s3_bucket.terraform_state terraform-up-and-running-state-qpworeitu234095889
     terraform plan -out="out.tfplan"
     # terraform plan -lock=false -out="out.tfplan"
   displayName: 'Terraform Plan'
