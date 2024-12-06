@@ -41,9 +41,9 @@ steps:
     aws configure set default.region us-east-1
   displayName: 'Login to AWS'
 
-# - script: |
-#     export TF_VAR_keypair=$(MY_KEYPAIR)
-#   displayName: 'Init ssh key from an environment variable'
+- script: |
+    export TF_VAR_keypair='$(MY_KEYPAIR)'
+  displayName: 'Init ssh key from an environment variable'
 
 - script: |
     echo "Initializing Terraform..."
