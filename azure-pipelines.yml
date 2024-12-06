@@ -27,10 +27,12 @@ steps:
   inputs:
     terraformVersion: '1.9.8'
 
-# - task: InstallSSHKey@0
-#   inputs:
-#     knownHostsEntry: $(known_hosts)
-#     sshKeySecureFile: 'id_rsa.pub'
+- task: InstallSSHKey@0
+  inputs:
+    knownHostsEntry: $(known_hosts)
+    # sshKeySecureFile: 'id_rsa.pub'
+    sshPublicKey: '$(MY_KEYPAIR)'
+    sshKeySecureFile: 'id_rsa'
 
 - script: |
     echo "Logging into AWS..."
@@ -39,9 +41,9 @@ steps:
     aws configure set default.region us-east-1
   displayName: 'Login to AWS'
 
-- script: |
-    export TF_VAR_keypair=$(MY_KEYPAIR)
-  displayName: 'Init ssh key from an environment variable'
+# - script: |
+#     export TF_VAR_keypair=$(MY_KEYPAIR)
+#   displayName: 'Init ssh key from an environment variable'
 
 - script: |
     echo "Initializing Terraform..."
