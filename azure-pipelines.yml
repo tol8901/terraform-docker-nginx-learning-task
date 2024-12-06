@@ -30,6 +30,11 @@ steps:
   inputs:
     terraformVersion: '1.9.8'
 
+- script: |
+      echo "The keypair is $(test_env_var)"
+      TF_VAR_test_var = $(test_env_var)
+  displayName: 'Set environment variable'
+    
 - task: InstallSSHKey@0
   inputs:
     knownHostsEntry: $(known_hosts)

@@ -16,10 +16,14 @@ variable "bucket" {
 #   default     = "terraform-up-and-running-locks"
 # }
 
-variable keypair {
-  description = "The public key to use for SSH access"
-  type        = string
-  # default     = sshPublicKey
+# variable keypair {
+#   description = "The public key to use for SSH access"
+#   type        = string
+#   default     = theKeypair
+# }
+
+variable "test_var" {
+  type = string
 }
 
 # locals {
