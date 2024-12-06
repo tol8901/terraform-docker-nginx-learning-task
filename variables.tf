@@ -15,3 +15,13 @@ variable "bucket" {
 #   type        = string
 #   default     = "terraform-up-and-running-locks"
 # }
+
+variable keypair {
+  description = "The public key to use for SSH access"
+  type        = string
+  default     = ""
+}
+
+locals {
+  keypair = var.keypair != "" ? var.keypair : (lookup(var, "MY_KEYPAIR", null) != null ? lookup(var, "MY_KEYPAIR", null) : "")
+}

@@ -34,25 +34,16 @@ steps:
   displayName: 'Login to AWS'
 
 - script: |
-    # cd $(System.DefaultWorkingDirectory)/_terraform-task/Terraform_space/ 
-
-    # Remove the existing lock file 
-    # rm -f .terraform.lock.hcl
-
     echo "Initializing Terraform..."
     terraform init 
-    # -reconfigure -upgrade
   displayName: 'Terraform Init'
 
 - script: |
     echo "Planning Terraform..."
-    # terraform import aws_s3_bucket.terraform_state terraform-up-and-running-state-qpworeitu234095889s
     terraform plan -out="out.tfplan"
-    # terraform plan -lock=false -out="out.tfplan"
   displayName: 'Terraform Plan'
   
 - task: PublishPipelineArtifact@1
   displayName: 'Publish Pipeline Artifact'
   inputs:
     artifact: 'Terraform_space'
-    # path: 'out.tfplan'
