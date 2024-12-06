@@ -15,6 +15,7 @@
 # - Terraform Init: Initializes Terraform, downloading necessary provider plugins.
 # - Terraform Plan: Generates an execution plan for the Terraform configuration.
 
+
 trigger:
 - main
 
@@ -32,6 +33,10 @@ steps:
     aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
     aws configure set default.region us-east-1
   displayName: 'Login to AWS'
+
+- script: |
+    export TF_VAR_keypair=$(MY_KEYPAIR)
+  displayName: 'Init ssh key from an environment variable'
 
 - script: |
     echo "Initializing Terraform..."

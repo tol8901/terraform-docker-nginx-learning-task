@@ -19,9 +19,9 @@ variable "bucket" {
 variable keypair {
   description = "The public key to use for SSH access"
   type        = string
-  default     = ""
+  # default     = TF_VAR_keypair
 }
 
-locals {
-  keypair = var.keypair != "" ? var.keypair : (lookup(var, "MY_KEYPAIR", null) != null ? lookup(var, "MY_KEYPAIR", null) : "")
-}
+# locals {
+#   keypair = var.keypair != "" ? var.keypair : (lookup(var, "MY_KEYPAIR", null) != null ? lookup(var, "MY_KEYPAIR", null) : "")
+# }
