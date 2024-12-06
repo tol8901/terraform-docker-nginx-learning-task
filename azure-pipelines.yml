@@ -27,10 +27,10 @@ steps:
   inputs:
     terraformVersion: '1.9.8'
 
-- task: InstallSSHKey@0
-  inputs:
-    knownHostsEntry: $(known_hosts)
-    sshKeySecureFile: 'id_rsa.pub'
+# - task: InstallSSHKey@0
+#   inputs:
+#     knownHostsEntry: $(known_hosts)
+#     sshKeySecureFile: 'id_rsa.pub'
 
 - script: |
     echo "Logging into AWS..."
