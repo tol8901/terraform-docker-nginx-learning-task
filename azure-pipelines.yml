@@ -21,8 +21,8 @@ trigger:
 
 pool: wsl-pool
 
-variables:
-  theKeypair: '$(MY_KEYPAIR)'
+# variables:
+#   theKeypair: '$(MY_KEYPAIR)'
 
 steps:
 
@@ -30,12 +30,12 @@ steps:
   inputs:
     terraformVersion: '1.9.8'
 
-- script: |
-      echo "The env. var. TF_VAR_test_var value is: $(test_env_var)"
-      # TF_VAR_test_var = $(test_env_var)
-      # export TF_VAR_test_var
-      printenv | grep TF_VAR
-  displayName: 'Set environment variable'
+# - script: |
+#       echo "The env. var. TF_VAR_test_var value is: $(test_env_var)"
+#       # TF_VAR_test_var = $(test_env_var)
+#       # export TF_VAR_test_var
+#       printenv | grep TF_VAR
+#   displayName: 'Set environment variable'
     
 # - task: InstallSSHKey@0
 #   inputs:
