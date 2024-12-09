@@ -32,7 +32,8 @@ steps:
 
 - script: |
       echo "The keypair is $(test_env_var)"
-      TF_VAR_test_var = $(test_env_var)
+      export TF_VAR_test_var = $(test_env_var)
+      printenv
   displayName: 'Set environment variable'
     
 - task: InstallSSHKey@0
