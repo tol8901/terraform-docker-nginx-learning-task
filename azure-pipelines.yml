@@ -37,12 +37,12 @@ steps:
       printenv | grep TF_VAR
   displayName: 'Set environment variable'
     
-- task: InstallSSHKey@0
-  inputs:
-    knownHostsEntry: $(known_hosts)
-    # sshKeySecureFile: 'id_rsa.pub'
-    sshPublicKey: '$(MY_KEYPAIR)'
-    sshKeySecureFile: 'id_rsa'
+# - task: InstallSSHKey@0
+#   inputs:
+#     knownHostsEntry: $(known_hosts)
+#     # sshKeySecureFile: 'id_rsa.pub'
+#     sshPublicKey: '$(MY_KEYPAIR)'
+#     sshKeySecureFile: 'id_rsa'
 
 - script: |
     echo "Logging into AWS..."
