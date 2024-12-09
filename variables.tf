@@ -32,5 +32,5 @@ variable "bucket" {
 
 variable "SSH_KEYPAIR" {
   type = string
-  sensitive = true
+  # sensitive = true
 }
