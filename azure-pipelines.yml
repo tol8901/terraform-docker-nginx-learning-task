@@ -37,35 +37,35 @@ steps:
       printenv | grep TF_VAR
   displayName: 'Set environment variable'
     
-# - task: InstallSSHKey@0
-#   inputs:
-#     knownHostsEntry: $(known_hosts)
-#     # sshKeySecureFile: 'id_rsa.pub'
-#     sshPublicKey: '$(MY_KEYPAIR)'
-#     sshKeySecureFile: 'id_rsa'
+- task: InstallSSHKey@0
+  inputs:
+    knownHostsEntry: $(known_hosts)
+    # sshKeySecureFile: 'id_rsa.pub'
+    sshPublicKey: '$(MY_KEYPAIR)'
+    sshKeySecureFile: 'id_rsa'
+
+- script: |
+    echo "Logging into AWS..."
+    aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
+    aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
+    aws configure set default.region us-east-1
+  displayName: 'Login to AWS'
 
 # - script: |
-#     echo "Logging into AWS..."
-#     aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
-#     aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
-#     aws configure set default.region us-east-1
-#   displayName: 'Login to AWS'
+#     export TF_VAR_keypair='$(MY_KEYPAIR)'
+#   displayName: 'Init ssh key from an environment variable'
 
-# # - script: |
-# #     export TF_VAR_keypair='$(MY_KEYPAIR)'
-# #   displayName: 'Init ssh key from an environment variable'
+- script: |
+    echo "Initializing Terraform..."
+    terraform init 
+  displayName: 'Terraform Init'
 
-# - script: |
-#     echo "Initializing Terraform..."
-#     terraform init 
-#   displayName: 'Terraform Init'
-
-# - script: |
-#     echo "Planning Terraform..."
-#     terraform plan -out="out.tfplan"
-#   displayName: 'Terraform Plan'
+- script: |
+    echo "Planning Terraform..."
+    terraform plan -out="out.tfplan"
+  displayName: 'Terraform Plan'
   
-# - task: PublishPipelineArtifact@1
-#   displayName: 'Publish Pipeline Artifact'
-#   inputs:
-#     artifact: 'Terraform_space'
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Pipeline Artifact'
+  inputs:
+    artifact: 'Terraform_space'
