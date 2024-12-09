@@ -32,8 +32,8 @@ steps:
 
 - script: |
       echo "The env. var. TF_VAR_test_var value is: $(test_env_var)"
-      TF_VAR_test_var = $(test_env_var)
-      export TF_VAR_test_var
+      # TF_VAR_test_var = $(test_env_var)
+      # export TF_VAR_test_var
       printenv | grep TF_VAR
   displayName: 'Set environment variable'
     
