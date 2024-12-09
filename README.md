@@ -154,6 +154,6 @@ This project is intended to show the skills and knowledge in Terraform, Docker, 
 ```sh
 terraform init -reconfigure
 terraform plan -lock=false
-terraform import aws_s3_bucket.terraform_state terraform-up-and-running-state-qpworeitu234095889
+terraform import aws_s3_bucket.terraform_state terraform-up-and-running-state-qpworeitu234095889q
 terraform apply -lock=false
 ```
