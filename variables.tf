@@ -22,10 +22,14 @@ variable "bucket" {
 #   default     = theKeypair
 # }
 
-variable "test_var" {
-  type = string
-}
+# variable "test_var" {
+#   type = string
+# }
 
 # locals {
 #   keypair = var.keypair != "" ? var.keypair : (lookup(var, "MY_KEYPAIR", null) != null ? lookup(var, "MY_KEYPAIR", null) : "")
 # }
+
+variable "SSH_KEYPAIR" {
+  type = string
+}
