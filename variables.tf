@@ -16,11 +16,11 @@ variable "bucket" {
 #   default     = "terraform-up-and-running-locks"
 # }
 
-# variable keypair {
-#   description = "The public key to use for SSH access"
-#   type        = string
-#   default     = theKeypair
-# }
+variable keypair {
+  description = "The public key to use for SSH access"
+  type        = string
+  # default     = theKeypair
+}
 
 # variable "test_var" {
 #   type = string
@@ -37,12 +37,12 @@ variable "bucket" {
 #   # default = "deploy_key_default_value_placeholder"
 # }
 
-variable "key_pair_name" {
-  description = "key_pair_name"
-  type        = string
-}
+# variable "key_pair_name" {
+#   description = "key_pair_name"
+#   type        = string
+# }
 
-variable "file_name" {
-  description = "Name of the key pair"
-  type        = string
-}
+# variable "file_name" {
+#   description = "Name of the key pair"
+#   type        = string
+# }

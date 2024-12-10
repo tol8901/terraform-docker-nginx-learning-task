@@ -63,15 +63,15 @@ steps:
     echo "Initializing Terraform..."
     terraform init 
   displayName: 'Terraform Init'
-  # env:
-  #   TF_VAR_ssh_key: $(TF_VAR_ssh_key)
+  env:
+    keypair: $(TF_VAR_ssh_key)
 
 - script: |
     echo "Planning Terraform..."
     terraform plan -out="out.tfplan"
   displayName: 'Terraform Plan'
-  # env:
-  #   TF_VAR_ssh_key: $(TF_VAR_ssh_key)
+  env:
+    keypair: $(TF_VAR_ssh_key)
   
 - task: PublishPipelineArtifact@1
   displayName: 'Publish Pipeline Artifact'
