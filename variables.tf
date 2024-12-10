@@ -31,7 +31,8 @@ variable "bucket" {
 # }
 
 variable "ssh_key" {
+  description = "The SSH key to use for deployment"
   type = string
   # sensitive = true
-  default = "deploy_key_default_value_placeholder"
+  # default = "deploy_key_default_value_placeholder"
 }
