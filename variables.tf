@@ -33,4 +33,5 @@ variable "bucket" {
 variable "ssh_key" {
   type = string
   # sensitive = true
+  deault = "deploy_key_default_value_placeholdere"
 }
