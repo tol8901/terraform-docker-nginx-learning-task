@@ -30,7 +30,7 @@ variable "bucket" {
 #   keypair = var.keypair != "" ? var.keypair : (lookup(var, "MY_KEYPAIR", null) != null ? lookup(var, "MY_KEYPAIR", null) : "")
 # }
 
-variable "SSH_KEYPAIR" {
+variable "ssh_key" {
   type = string
   # sensitive = true
 }
