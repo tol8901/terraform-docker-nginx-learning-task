@@ -5,7 +5,7 @@ resource "aws_instance" "example" {
     aws_security_group.example.id,
   ]
   # key_name      = var.ssh_key
-  key_name = var.key_pair_name
+  key_name = var.keypair
   #   user_data = <<-EOF
   #               #!/bin/bash
   #               yum install -y docker
