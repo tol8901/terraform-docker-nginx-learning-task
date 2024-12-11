@@ -19,7 +19,7 @@ variable "bucket" {
 variable keypair {
   description = "The public key to use for SSH access"
   type        = string
-  # default     = theKeypair
+  sensitive = true
 }
 
 # variable "test_var" {
