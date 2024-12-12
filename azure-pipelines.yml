@@ -61,14 +61,14 @@ steps:
 
 - script: |
     echo "Initializing Terraform..."
-    terraform init -var "keypair=$(TF_VAR_ssh_key)"
+    terraform init -var "keypair="$(TF_VAR_ssh_key)""
   displayName: 'Terraform Init'
   # env:
   #   keypair: $(TF_VAR_ssh_key)
 
 - script: |
     echo "Planning Terraform..."
-    terraform plan -out="out.tfplan" -var "keypair=$(TF_VAR_ssh_key)"
+    terraform plan -out="out.tfplan" -var "keypair="$(TF_VAR_ssh_key)""
   displayName: 'Terraform Plan'
   # env:
   #   keypair: $(TF_VAR_ssh_key)
