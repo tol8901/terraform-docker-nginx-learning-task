@@ -68,7 +68,7 @@ steps:
 
 - script: |
     echo "Planning Terraform..."
-    terraform plan -out="out.tfplan" -var "keypair="$(TF_VAR_ssh_key)""
+    terraform plan -out="out.tfplan" -var "keypair=$(TF_VAR_ssh_key)"
   displayName: 'Terraform Plan'
   # env:
   #   keypair: $(TF_VAR_ssh_key)
