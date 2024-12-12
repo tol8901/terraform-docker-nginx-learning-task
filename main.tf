@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     # This block configures the S3 backend for storing the Terraform state
-    bucket = "terraform-up-and-running-state-qpworeitu234095889q"
+    bucket = "terraform-up-and-running-state-qpworeitu234095889n"
     key    = "global/s3/terraform.tfstate"
     region = "us-east-1"
 
